@@ -1,0 +1,17 @@
+<section class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Issues</h2>
+    </div>
+    <div class="col-md-6">
+      <%= simple_form_for @issue do |f|%>
+        <%= f.input :subject, label: "Asunto" %>
+        <%= f.input :description, as: :text, label: "Descripción"%>
+        <%= f.input :status, collection: [[:pending, 0], [:todo, 1], [:done, 2], [:finished, 3]], label: "Estado"%>
+        <%= f.input :due_date, as: :date, label: "Fecha de Vencimiento"%>
+        <%= f.input :project, collection: current_user.projects, label: "Seleccionar Proyecto" %>
+        <%= f.submit "Crear", class: "btn btn-success"%>
+      <% end %>
+    </div>
+  </div>
+</section>

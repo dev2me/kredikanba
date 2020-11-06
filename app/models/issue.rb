@@ -1,4 +1,5 @@
 class Issue < ApplicationRecord
+  attr_accessor :project
   belongs_to :user
   belongs_to :category
   has_many :comments

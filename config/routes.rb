@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     unauthenticated :user do
       root "devise/sessions#new"
     end
+    authenticated :user do
+      root to: "projects#index", as: :home
+    end
   end
 
   resources :comments

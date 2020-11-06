@@ -17,3 +17,15 @@
     <% end %>
   </div>
 </section>
+<section class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Lista de proyectos</h2>
+    </div>
+    <% @projects.each do |project|%>
+      <div class="col-md-12">
+        <span><%= project.name %></span>
+      </div>
+    <% end %>
+  </div>
+</section>
